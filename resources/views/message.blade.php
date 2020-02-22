@@ -17,5 +17,24 @@
         {{ $message->message }}
     </p>
     </div>
+    <div class="comments">
+
+        @foreach($comments as $comment)
+            <div class="single_comment">
+                <p> {{ $comment->content }}</p>
+            </div>
+
+        @endforeach
+
+
+    </div>
+    <div class="comment">
+        <form method="POST" action="">
+            @csrf
+            @method("PUT")
+            <input type="text" name="content">
+            <button type="submit"> Reageren </button>
+        </form>
+    </div>
 </body>
 </html>

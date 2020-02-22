@@ -24,6 +24,35 @@ body {
     color: white;
 }
 
+.comments{
+    text-align: center;
+}
+
+.single_comment{
+    transition: 0.5s;
+    background-color: white;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 80px;
+    border-radius: 8px;
+    -webkit-box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.15);
+    -moz-box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.15);
+    box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.15);
+}
+
+.single_comment:hover {
+    transition: 0.5s;
+    -webkit-box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.30);
+    -moz-box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.30);
+    box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.30);
+}
+
+.comment{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 form input{
     padding: 9px;
     margin-bottom: 10px;

@@ -17,4 +17,7 @@ Route::get('/', function () {
 
 Route::post("/messages", "MessageController@get");
 
+Route::put("/messages/{message}", "MessageController@addComment");
+
 Route::get("/messages/{message}", "MessageController@show");
+
