@@ -7,11 +7,51 @@ body {
     font-family: 'Quicksand', sans-serif;
 }
 
+h1{
+    font-size: 50px;
+}
+
 .text {
+    overflow: hidden;
     text-align: center;
     padding: 2.5%;
-    font-size: 20px;
+    font-size: 25px;
 }
+
+p {
+    text-overflow: ellipsis;
+}
+
+#deletelist{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#deletelist td, #deletelist th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#deletelist tr:nth-child(even){background-color: #f2f2f2;}
+
+#deletelist tr:hover {background-color: #ddd;}
+
+#deletelist th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #eebb00;
+    color: white;
+}
+
+.content{
+    overflow: hidden;
+    text-align: center;
+    padding: 2.5%;
+    font-size: 25px;
+}
+
 
 .banner {
     padding: 4.5%;
@@ -28,24 +68,36 @@ body {
     text-align: center;
 }
 
-.single_comment{
-    transition: 0.5s;
-    background-color: white;
 
-    text-align: center;
+.single_comment{
+    padding-left: 10px;
+    margin: 10px 0px 10px 0px;
+    transition: 0.5s;
+    border-style: solid;
+    border-color: white;
+    background-color: white;
     vertical-align: middle;
-    line-height: 80px;
+    line-height: 30px;
     border-radius: 8px;
     -webkit-box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.15);
     -moz-box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.15);
     box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.15);
 }
 
+.content{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.created_at{
+    font-size: 15px;
+    text-align: left;
+    color: gray;
+}
+
 .single_comment:hover {
-    transition: 0.5s;
-    -webkit-box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.30);
-    -moz-box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.30);
-    box-shadow: 7px 7px 10px -7px rgba(0,0,0,0.30);
+    transition: 0.7s;
+    border-color: rgb(209, 175, 4);
 }
 
 .comment{
@@ -60,6 +112,22 @@ form input{
     border-color: rgb(216, 216, 216);
     border-width: 2px;
     border-radius: 5px;
+}
+
+form textarea{
+    padding: 9px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: rgb(216, 216, 216);
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+form input:focus, textarea:focus{
+    transition: 0.5s;
+
+    border-color: rgb(209, 175, 4);
+    outline: none;
 }
 
 form button{

@@ -10,7 +10,6 @@ class MessageController extends Controller
 {
     public function get(){
         $message = Message::where("slug", request("slug"))->firstOrFail();
-
         return redirect("/messages/" . $message->slug);
     }
 
@@ -19,10 +18,36 @@ class MessageController extends Controller
         return view("message", ["message" => $message, "comments" => $comments]);
     }
 
+    public function addMessage(){
+
+        request()->validate(
+            [
+                "slug" => "required|unique:messages",
+                "name" => "required",
+                "message" => "required"
+            ]
+        );
+
+        $message = new Message(request(["slug","name", "message"]));
+        $message->save();
+        return redirect("/messages/" . request("slug"));
+    }
+
     public function addComment(Message $message){
-        Comment::insert(["message_id" => $message->id, "content" => request("content")]);
+        $comment = new Comment();
+        $comment->addComment($message, request("content"));
         return redirect("/messages/" . $message->slug);
     }
+
+    public function delete($id)
+    {
+            Message::where("id", $id)->delete();
+            return redirect("/admin");
+
+
+    }
+
+
 
 
 }

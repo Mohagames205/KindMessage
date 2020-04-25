@@ -15,9 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post("/messages", "MessageController@get");
+Route::post("/admin", "MessageController@addMessage");
 
-Route::put("/messages/{message}", "MessageController@addComment");
+Route::get("/messages", "MessageController@get");
+
+Route::post("/messages/{message}", "MessageController@addComment");
 
 Route::get("/messages/{message}", "MessageController@show");
 
+Route::delete("/messages/{id}/delete", "MessageController@delete");
+
+Auth::routes();
+
+Route::get('/admin', 'HomeController@index')->name('home');
